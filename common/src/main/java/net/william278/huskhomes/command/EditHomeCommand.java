@@ -39,7 +39,7 @@ import java.util.regex.Pattern;
 public class EditHomeCommand extends SavedPositionCommand<Home> {
 
     public EditHomeCommand(@NotNull HuskHomes plugin) {
-        super("edithome", List.of(), Home.class, List.of("rename", "description", "relocate", "privacy"), plugin);
+        super("editpwarp", List.of(), Home.class, List.of("rename", "description"), plugin);
         addAdditionalPermissions(arguments.stream().collect(HashMap::new, (m, e) -> m.put(e, false), HashMap::putAll));
     }
 

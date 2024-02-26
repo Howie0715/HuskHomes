@@ -32,7 +32,7 @@ import java.util.Optional;
 public class SetHomeCommand extends SetPositionCommand {
 
     protected SetHomeCommand(@NotNull HuskHomes plugin) {
-        super("sethome", plugin);
+        super("setpwarp", plugin);
     }
 
     @Override
