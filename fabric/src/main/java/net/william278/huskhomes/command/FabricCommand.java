@@ -128,31 +128,11 @@ public class FabricCommand {
      * Commands available on the Fabric HuskHomes implementation.
      */
     public enum Type {
-        HOME_COMMAND(PrivateHomeCommand::new),
         SET_HOME_COMMAND(SetHomeCommand::new),
-        HOME_LIST_COMMAND(HomeListCommand::new),
         DEL_HOME_COMMAND(DelHomeCommand::new),
         EDIT_HOME_COMMAND(EditHomeCommand::new),
         PUBLIC_HOME_COMMAND(PublicHomeCommand::new),
         PUBLIC_HOME_LIST_COMMAND(PublicHomeListCommand::new),
-        WARP_COMMAND(WarpCommand::new),
-        SET_WARP_COMMAND(SetWarpCommand::new),
-        WARP_LIST_COMMAND(WarpListCommand::new),
-        DEL_WARP_COMMAND(DelWarpCommand::new),
-        EDIT_WARP_COMMAND(EditWarpCommand::new),
-        TP_COMMAND(TpCommand::new),
-        TP_HERE_COMMAND(TpHereCommand::new),
-        TPA_COMMAND((plugin) -> new TeleportRequestCommand(plugin, TeleportRequest.Type.TPA)),
-        TPA_HERE_COMMAND((plugin) -> new TeleportRequestCommand(plugin, TeleportRequest.Type.TPA_HERE)),
-        TPACCEPT_COMMAND((plugin) -> new TpRespondCommand(plugin, true)),
-        TPDECLINE_COMMAND((plugin) -> new TpRespondCommand(plugin, false)),
-        RTP_COMMAND(RtpCommand::new),
-        TP_IGNORE_COMMAND(TpIgnoreCommand::new),
-        TP_OFFLINE_COMMAND(TpOfflineCommand::new),
-        TP_ALL_COMMAND(TpAllCommand::new),
-        TPA_ALL_COMMAND(TpaAllCommand::new),
-        SPAWN_COMMAND(SpawnCommand::new),
-        SET_SPAWN_COMMAND(SetSpawnCommand::new),
         BACK_COMMAND(BackCommand::new),
         HUSKHOMES_COMMAND(HuskHomesCommand::new);
 
