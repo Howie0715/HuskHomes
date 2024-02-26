@@ -94,7 +94,7 @@ public class HomesManager {
     @NotNull
     public List<String> getPublicHomeIdentifiers() {
         return publicHomes.stream()
-                .map(Home::getIdentifier)
+                .map(Home::getName)
                 .toList();
     }
 
@@ -225,6 +225,7 @@ public class HomesManager {
                 })
                 .orElse(Home.from(position, PositionMeta.create(name, ""), owner));
         plugin.getDatabase().saveHome(home);
+        this.setHomePrivacy(home, true);
         this.cacheHome(home, true);
         return home;
     }
@@ -350,7 +351,7 @@ public class HomesManager {
     public void setHomePrivacy(@NotNull User owner, @NotNull Home home, boolean isPublic) {
         if (isPublic && owner instanceof OnlineUser online) {
             int publicHomes = plugin.getDatabase().getHomes(owner).stream().filter(Home::isPublic).toList().size();
-            if (publicHomes >= getMaxPublicHomes(online)) {
+            if (publicHomes >= getMaxHomes(online)) {
                 throw new ValidationException(ValidationException.Type.REACHED_MAX_PUBLIC_HOMES);
             }
         }
