@@ -94,7 +94,7 @@ public class HomesManager {
     @NotNull
     public List<String> getPublicHomeIdentifiers() {
         return publicHomes.stream()
-                .map(Home::getName)
+                .map(Home::getIdentifier)
                 .toList();
     }
 

@@ -64,7 +64,10 @@ public class Teleport implements Completable {
         this.type = type;
         this.actions = actions;
         this.async = plugin.getSettings().getGeneral().isTeleportAsync();
-        this.updateLastPosition = false;
+        this.updateLastPosition = updateLastPosition && plugin.getCommand(BackCommand.class)
+                .map(command -> executor.hasPermission(command.getPermission())
+                        && executor.hasPermission(command.getPermission("operator")))
+                .orElse(false);
     }
 
     @NotNull

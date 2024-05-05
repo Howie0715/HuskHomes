@@ -78,7 +78,7 @@ public class PublicHomeListCommand extends ListCommand {
                         .setHeaderFormat(plugin.getLocales().getRawLocale("public_home_list_page_title",
                                         "%first_item_on_page_index%", "%last_item_on_page_index%", "%total_items%")
                                 .orElse(""))
-                        .setCommand("/huskhomes:phomelist").build());
+                        .setCommand("/huskhomes:pwarps").build());
         return Optional.of(homeList);
     }
 
